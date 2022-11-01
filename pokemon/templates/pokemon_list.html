@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon List</title>
+    <style>
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    #pokemon {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 80%;
+    }
+    #pokemon td, #pokemon th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    #pokemon tr:nth-child(even){background-color: #f2f2f2;}
+    #pokemon tr:hover {background-color: #ddd;}
+    #pokemon th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Pokemon List</h1>
+    <table id="pokemon">
+      <tr>
+          <th>Name</th>
+          <th>Moves</th>
+          <th>Ability</th>
+          <th>Experience</th>
+          <th>Height</th>
+          <th>Weight</th>
+      </tr>
+      {% for pokemon in pokemon_list %}
+      <tr>
+          <td>{{ pokemon.name }}</td>
+          <td>{{ pokemon.moves }}</td>
+          <td>{{ pokemon.ability }}</td>
+          <td>{{ pokemon.experience }}</td>
+          <td>{{ pokemon.height }}</td>
+          <td>{{ pokemon.weight }}</td>
+      </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
