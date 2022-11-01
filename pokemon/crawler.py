@@ -2,7 +2,6 @@ import requests
 
 
 class Scraper:
-
     def get_response(self):
         url = "https://pokeapi.co/api/v2/pokemon"
         response = requests.get(url)
@@ -17,7 +16,7 @@ class Scraper:
 
         pokemon_list = []
 
-        for item in data['results']:
+        for item in data["results"]:
             res = requests.get(item["url"])
             pokemon_data = res.json()
 
